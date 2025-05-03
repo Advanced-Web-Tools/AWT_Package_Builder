@@ -1,0 +1,17 @@
+C:\Users\stefa\RiderProjects\APA\PackageCreator\bin\Debug\net8.0\PackageCreator.exe
+C:\Users\stefa\RiderProjects\APA\PackageCreator\bin\Debug\net8.0\PackageCreator.deps.json
+C:\Users\stefa\RiderProjects\APA\PackageCreator\bin\Debug\net8.0\PackageCreator.runtimeconfig.json
+C:\Users\stefa\RiderProjects\APA\PackageCreator\bin\Debug\net8.0\PackageCreator.dll
+C:\Users\stefa\RiderProjects\APA\PackageCreator\bin\Debug\net8.0\PackageCreator.pdb
+C:\Users\stefa\RiderProjects\APA\PackageCreator\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\PackageCreator.csproj.AssemblyReference.cache
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\PackageCreator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\PackageCreator.AssemblyInfoInputs.cache
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\PackageCreator.AssemblyInfo.cs
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\PackageCreator.csproj.CoreCompileInputs.cache
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\PackageC.D351303F.Up2Date
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\PackageCreator.dll
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\refint\PackageCreator.dll
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\PackageCreator.pdb
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\PackageCreator.genruntimeconfig.cache
+C:\Users\stefa\RiderProjects\APA\PackageCreator\obj\Debug\net8.0\ref\PackageCreator.dll
