@@ -17,7 +17,7 @@ namespace PackageCreator
                 string input = Console.ReadLine();
                 
                 if(input.ToLower() == "n")
-                    break;
+                    break; 
             }
         }
     }
