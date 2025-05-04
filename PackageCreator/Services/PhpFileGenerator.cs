@@ -1,47 +1,47 @@
-﻿using System;
-using System.IO;
-using PackageCreator.Models;
+﻿using PackageCreator.Models;
 
-namespace PackageCreator.Services
+namespace PackageCreator.Services;
+
+public class PhpFileGenerator
 {
-    public class PhpFileGenerator
+    public static void CreatePhpFiles(string basePath, PackageInfo packageInfo)
     {
-        public static void CreatePhpFiles(string basePath, PackageInfo packageInfo)
-        {
-            // Create main.php
-            string mainPhpPath = Path.Combine(basePath, packageInfo.Name, "main.php");
-            string mainPhpContent = GenerateMainPhpContent(packageInfo.Name);
-            File.WriteAllText(mainPhpPath, mainPhpContent);
-            Console.WriteLine($"Created main.php at: {mainPhpPath}");
+        // Create main.php
+        var mainPhpPath = Path.Combine(basePath, packageInfo.Name, "main.php");
+        var mainPhpContent = GenerateMainPhpContent(packageInfo.Name);
+        File.WriteAllText(mainPhpPath, mainPhpContent);
+        Console.WriteLine($"Created main.php at: {mainPhpPath}");
 
-            // Create install.php
-            string installPhpPath = Path.Combine(basePath, packageInfo.Name, "install.php");
-            string installPhpContent = GenerateInstallPhpContent(packageInfo.Name);
-            File.WriteAllText(installPhpPath, installPhpContent);
-            Console.WriteLine($"Created install.php at: {installPhpPath}");
+        // Create install.php
+        var installPhpPath = Path.Combine(basePath, packageInfo.Name, "install.php");
+        var installPhpContent = GenerateInstallPhpContent(packageInfo.Name);
+        File.WriteAllText(installPhpPath, installPhpContent);
+        Console.WriteLine($"Created install.php at: {installPhpPath}");
 
-            // Create Router file
-            string routerPath = Path.Combine(basePath, packageInfo.Name, "routes", $"{packageInfo.Name}Router.php");
-            string routerContent = GenerateRouterContent(packageInfo.Name);
-            File.WriteAllText(routerPath, routerContent);
-            Console.WriteLine($"Created {packageInfo.Name}Router.php at: {routerPath}");
+        // Create Router file
+        var routerPath = Path.Combine(basePath, packageInfo.Name, "routes", $"{packageInfo.Name}Router.php");
+        var routerContent = GenerateRouterContent(packageInfo.Name);
+        File.WriteAllText(routerPath, routerContent);
+        Console.WriteLine($"Created {packageInfo.Name}Router.php at: {routerPath}");
 
-            // Create ControllerAPI file
-            string controllerApiPath = Path.Combine(basePath, packageInfo.Name, "controllers", $"{packageInfo.Name}ControllerAPI.php");
-            string controllerApiContent = GenerateControllerApiContent(packageInfo.Name);
-            File.WriteAllText(controllerApiPath, controllerApiContent);
-            Console.WriteLine($"Created {packageInfo.Name}ControllerAPI.php at: {controllerApiPath}");
+        // Create ControllerAPI file
+        var controllerApiPath =
+            Path.Combine(basePath, packageInfo.Name, "controllers", $"{packageInfo.Name}ControllerAPI.php");
+        var controllerApiContent = GenerateControllerApiContent(packageInfo.Name);
+        File.WriteAllText(controllerApiPath, controllerApiContent);
+        Console.WriteLine($"Created {packageInfo.Name}ControllerAPI.php at: {controllerApiPath}");
 
-            // Create Controller file
-            string controllerPath = Path.Combine(basePath, packageInfo.Name, "controllers", "controller", $"{packageInfo.Name}Controller.php");
-            string controllerContent = GenerateControllerContent(packageInfo.Name);
-            File.WriteAllText(controllerPath, controllerContent);
-            Console.WriteLine($"Created {packageInfo.Name}Controller.php at: {controllerPath}");
-        }
+        // Create Controller file
+        var controllerPath = Path.Combine(basePath, packageInfo.Name, "controllers", "controller",
+            $"{packageInfo.Name}Controller.php");
+        var controllerContent = GenerateControllerContent(packageInfo.Name);
+        File.WriteAllText(controllerPath, controllerContent);
+        Console.WriteLine($"Created {packageInfo.Name}Controller.php at: {controllerPath}");
+    }
 
-        private static string GenerateMainPhpContent(string name)
-        {
-            return $@"<?php
+    private static string GenerateMainPhpContent(string name)
+    {
+        return $@"<?php
 
 use packages\runtime\api\RuntimeLinkerAPI;
 use packages\runtime\handler\enums\ERuntimeFlags;
@@ -58,11 +58,11 @@ final class {name} extends RuntimeLinkerAPI
         // Main logic here
     }}
 }}";
-        }
+    }
 
-        private static string GenerateInstallPhpContent(string name)
-        {
-            return $@"<?php
+    private static string GenerateInstallPhpContent(string name)
+    {
+        return $@"<?php
 
 use database\creator\ColumnCreator;
 use database\creator\TableWizard;
@@ -79,11 +79,11 @@ class {name}Install implements IPackageInstall
         return true;
     }}
 }}";
-        }
+    }
 
-        private static string GenerateRouterContent(string name)
-        {
-            return $@"<?php
+    private static string GenerateRouterContent(string name)
+    {
+        return $@"<?php
 
 use packages\runtime\api\RuntimeRouterAPI;
 use router\Router;
@@ -100,11 +100,11 @@ final class {name}Router extends RuntimeRouterAPI
         // Main logic here
     }}
 }}";
-        }
+    }
 
-        private static string GenerateControllerApiContent(string name)
-        {
-            return $@"<?php
+    private static string GenerateControllerApiContent(string name)
+    {
+        return $@"<?php
 
 use controller\Controller;
 use packages\runtime\api\RuntimeControllerAPI;
@@ -121,11 +121,11 @@ final class {name}ControllerAPI extends RuntimeControllerAPI
         // Main logic here
     }}
 }}";
-        }
+    }
 
-        private static string GenerateControllerContent(string name)
-        {
-            return $@"<?php
+    private static string GenerateControllerContent(string name)
+    {
+        return $@"<?php
 
 use controller\Controller;
 use view\View;
@@ -137,6 +137,5 @@ class {name}Controller extends Controller
         return $this->view($params);
     }}
 }}";
-        }
     }
 }
